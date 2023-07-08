@@ -4,11 +4,10 @@
     @include('includes.head')
 </head>
 <body>
-    <section class="flex">
         @include('includes.navbar')
-        <div class="grow p-10">
+        <div class="grow p-4 sm:ml-64">
             <h1 class="text-4xl font-bold mb-10">Section 2</h1>
-            <form action="/admin/create-section2" method="POST">
+            <form action="./create-section2" method="POST">
                 @csrf
                 <div class="mb-6">
                     <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
@@ -76,7 +75,6 @@
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Section 2</button>
             </form>
         </div>
-    </section>
 
     @include('includes.script')
 </body>

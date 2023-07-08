@@ -5,24 +5,21 @@
 </head>
 <body>
     @auth
-    <section class="flex">
         @include('includes.navbar')
-        <div class="grow p-10">
+        <div class="grow p-4 sm:ml-64">
             <h1 class="mb-5">Selamat datang di Dashboard Website Codehouse</h1>
-            <div class="section-edit grid grid-cols-3 gap-4">
-                <a href="/admin/section1">Section 1</a>
-                <a href="/admin/section2">Section 2</a>
-                <a href="/admin/section3">Section 3</a>
-                <a href="/admin/section4">Section 4</a>
-                <a href="/admin/section5">Section 5</a>
-                <a href="/admin/section6">Section 6</a>
+            <div class="section-edit grid grid-cols-2 md:grid-cols-3 gap-4">
+                <a href="./admin/section1">Section 1</a>
+                <a href="./admin/section2">Section 2</a>
+                <a href="./admin/section3">Section 3</a>
+                <a href="./admin/section4">Section 4</a>
+                <a href="./admin/section5">Section 5</a>
             </div>
         </div>
-    </section>
     @else  
     {{-- LOGIN ADMIN --}}
     <section class="bg-myBlue py-10 min-h-screen flex items-center justify-center">
-        <div class="container mx-auto w-1/3 bg-white p-10 rounded-lg">
+        <div class="container mx-auto md:w-1/3 bg-white p-10 rounded-lg">
             <h1 class="font-bold text-4xl mb-5 text-center">Login</h1>
             @if (session('status'))
                 <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
@@ -33,7 +30,7 @@
                     </div>
                 </div>
             @endif
-            <form action="/login" method="POST">
+            <form action="./login" method="POST">
                 @csrf
                 <div class="relative z-0 w-full mb-6 group">
                     <input type="username" name="username" id="floating_username" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

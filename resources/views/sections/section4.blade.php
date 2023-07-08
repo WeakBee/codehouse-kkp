@@ -6,15 +6,11 @@
 <body>
         @include('includes.navbar')
         <div class="grow p-4 sm:ml-64">
-            <h1 class="text-4xl font-bold mb-10">Section 2</h1>
+            <h1 class="text-4xl font-bold mb-10">Section 4</h1>
             <p class="mb-5 font-bold"><a href="../"><- Kembali</a></p>
-            <form action="../edit-section2/1" method="POST">
+            <form action="../edit-section4/1" method="POST">
                 @csrf
                 @method('PUT')
-                <div class="mb-6">
-                    <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input name="title" type="text" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->title}}"  required>
-                </div>
                 <div class="mb-6">
                     <label for="subtitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub Title</label>
                     <input name="subtitle" type="text" id="subtitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->subtitle}}" required>
@@ -47,36 +43,10 @@
                     <input name="card3text" type="text" id="card3text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card3text}}" required>
                 </div>
 
-                <div class="mb-6">
-                    <label for="card4title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Card 4 Title</label>
-                    <input name="card4title" type="text" id="card4title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card4title}}" required>
-                </div>
-                <div class="mb-6">
-                    <label for="card4text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text 4 Text</label>
-                    <input name="card4text" type="text" id="card4text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card4text}}" required>
-                </div>
-
-                <div class="mb-6">
-                    <label for="card5title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Card 5 Title</label>
-                    <input name="card5title" type="text" id="card5title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card5title}}" required>
-                </div>
-                <div class="mb-6">
-                    <label for="card5text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text 5 Text</label>
-                    <input name="card5text" type="text" id="card5text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card5text}}" required>
-                </div>
-
-                <div class="mb-6">
-                    <label for="card6title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Card 6 Title</label>
-                    <input name="card6title" type="text" id="card6title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card6title}}" required>
-                </div>
-                <div class="mb-6">
-                    <label for="card6text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text 6 Text</label>
-                    <input name="card6text" type="text" id="card6text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{$data->card6text}}" required>
-                </div>
-
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Changes</button>
             </form>
         </div>
+
     @include('includes.script')
 </body>
 </html>

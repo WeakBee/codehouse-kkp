@@ -4,11 +4,10 @@
     @include('includes.head')
 </head>
 <body>
-    <section class="flex">
         @include('includes.navbar')
 
-        <div class="grow p-10">
-            <h1 class="mb-10 text-4xl font-bold">Form Messages</h1>
+        <div class="grow md:p-10 p-4 sm:ml-64">
+            <h1 class="mb-10 text-4xl font-bold text-center md:text-left">Form Messages</h1>
             @if (count($messages) < 1)
                 <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Pesan Masih Kosong nih...</h5>
@@ -21,22 +20,21 @@
                 </div>
             @endif
             @foreach($messages as $data)
-                    <div class="mb-5 bg-myBlue text-white rounded-lg p-10 flex items-center">
-                        <p class="text-6xl font-bold mr-10">{{$data['id']}}</p>
+                    <div class="mb-5 text-blue-700 rounded-lg px-5 py-3 flex flex-col md:flex-row items-center border border-blue-700">
+                        <p class="md:text-6xl text-xl font-bold md:mr-10">{{$data['id']}}</p>
                         <div>
-                            <h1 class="text-4xl font-bold">{{$data['client_name']}}</h1>
-                            <div class="flex mb-5">
-                                <p>{{$data['client_email']}} |&nbsp;</p>
-                                <p>{{$data['client_company']}} |&nbsp;</p>
+                            <h1 class="md:text-4xl text-xl font-bold text-center md:text-left">{{$data['client_name']}}</h1>
+                            <div class="flex flex-col md:flex-row mb-2 text-sm text-center md:text-left">
+                                <p>{{$data['client_email']}} <span class="hidden md:inline md:mx-2">-</span> </p>
+                                <p>{{$data['client_company']}} <span class="hidden md:inline md:mx-2">-</span> </p>
                                 <p>{{$data['client_phone']}}</p>
                             </div>
-                            <p>"{{$data['how_can_we_help']}}"</p>
-                            <p class="text-sm">Dikirim: {{$data['created_at']}} </p>
+                            <p class="text-center md:text-left text-sm md:text-md">"{{$data['how_can_we_help']}}"</p>
+                            <p class="text-sm text-center md:text-left text-sm md:text-md">Dikirim: {{$data['created_at']}} </p>
                         </div>
                     </div>
                 @endforeach
         </div>
-    </section>
 
     @include('includes.script')
 </body>

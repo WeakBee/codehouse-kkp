@@ -46,7 +46,7 @@
     width: 100%;
   }
 
-  #section-2{
+  #section-marquee{
     overflow: hidden;
   }
   .marquee {
@@ -272,3 +272,53 @@
     opacity: 1;
 }
   /* Punya Irsyad */
+
+  @media (max-width: 768px) {
+    .method-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+  }
+
+  .card{
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+  }
+  .card:hover img {
+    height: 210px;
+  }
+
+  .card-carousel[place="2"]{
+    opacity: 0;
+    transform: translateX(-220px) scale(0.9);
+    z-index: 5;
+  }
+  .card-carousel[place="6"]{
+    opacity: 0;
+    transform: translateX(220px) scale(0.9);
+    z-index: 3;
+  }
+  .ac-left{
+    left: 5vw;
+  }
+  .ac-right{
+    right: 5vw
+  }
+
+  .circle-indicator{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    justify-content: center;
+  }
+  .cust-card img{
+    width: 210px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+}
