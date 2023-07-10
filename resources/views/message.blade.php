@@ -7,7 +7,12 @@
         @include('includes.navbar')
 
         <div class="grow md:p-10 p-4 sm:ml-64">
-            <h1 class="mb-10 text-4xl font-bold text-center md:text-left">Form Messages</h1>
+            <div class="flex flex-col md:flex-row mb-5">
+                <h1 class="mb-3 text-4xl font-bold text-center md:text-left flex-auto">Form Messages</h1>
+                <div class="flex align-center justify-center mb-5 md:mb-0">
+                    <a href="{{ route('print') }}"><div class="bg-myBlue p-5 py-2 rounded-xl text-white border border-myBlue hover:bg-transparent hover:text-myBlue">Print</div></a>
+                </div>
+            </div>
             @if (count($messages) < 1)
                 <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Pesan Masih Kosong nih...</h5>

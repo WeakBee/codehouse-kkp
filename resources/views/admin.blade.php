@@ -2,18 +2,47 @@
 <html lang="en">
 <head>
     @include('includes.head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
 </head>
 <body>
     @auth
         @include('includes.navbar')
         <div class="grow p-4 sm:ml-64">
             <h1 class="mb-5">Selamat datang di Dashboard Website Codehouse</h1>
-            <div class="section-edit grid grid-cols-2 md:grid-cols-3 gap-4">
-                <a href="./admin/section1">Section 1</a>
-                <a href="./admin/section2">Section 2</a>
-                <a href="./admin/section3">Section 3</a>
-                <a href="./admin/section4">Section 4</a>
-                <a href="./admin/section5">Section 5</a>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="bg-green-400 p-5 text-white text-center shadow-xl">
+                    <h1 class="font-bold text-xl mb-3">Pengunjung</h1>
+                    <p>{{ count($views) }}</p>
+                </div>
+                <div class="bg-blue-400 p-5 text-white text-center shadow-xl">
+                    <h1 class="font-bold text-xl mb-3">Form Masuk</h1>
+                    <p>{{ count($form) }}</p>
+                </div>
+            </div>
+            <div class="border border-black h-96 mt-5 md:px-20 py-5">
+                <table class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
+
+                    <caption> Statistik Website </caption>
+                  
+                    <thead>
+                      <tr>
+                        <th scope="col"> Year </th>
+                        <th scope="col"> Value </th>
+                      </tr>
+                    </thead>
+                  
+                    <tbody>
+                      <tr>
+                        <th> Pengunjung </th>
+                        <td style="--size:0.{{ count($views) }}; --color:rgb(49 196 141);" ></td>
+                      </tr>
+                      <tr>
+                        <th> Form Masuk </th>
+                        <td style="--size:0.{{ count($form) }}; --color:rgb(118 169 250);"></td>
+                      </tr>
+                    </tbody>
+                  
+                  </table>
             </div>
         </div>
     @else  

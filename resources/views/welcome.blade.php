@@ -9,7 +9,7 @@
     {{-- @vite('resources/css/app.css') --}}
     <link rel="icon" href="{{ url('assets/images/favicon2.ico') }}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('build/assets/app-2750b9d9.css')}}">
+    <link rel="stylesheet" href="{{asset('build/assets/app-7a9009f6.css')}}">
 </head>
 <body>
 @if (empty($section1) && empty($section2) && empty($section3) && empty($section4) && empty($section5))
@@ -19,6 +19,7 @@
         </div>
     </section>
 @else
+
     <section class='bg-myBlue text-white relative'>
         <nav class="text-white py-5 relative z-10">
             <div class="container flex flex-wrap items-center mx-auto text-white px-5 ">

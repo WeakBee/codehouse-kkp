@@ -1,19 +1,19 @@
 <?php
 
-use App\Http\Controllers\CaseStudyController;
-use App\Models\Section1;
-use App\Models\Section2;
+use App\Http\Controllers\PrintController;
+use App\Models\Form;
+use App\Models\Views;
 use App\Models\Section3;
-use App\Models\Section4;
-use App\Models\Section5;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewsController;
 use App\Http\Controllers\Section1Controller;
 use App\Http\Controllers\Section2Controller;
 use App\Http\Controllers\Section3Controller;
 use App\Http\Controllers\Section4Controller;
 use App\Http\Controllers\Section5Controller;
+use App\Http\Controllers\CaseStudyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,18 +26,22 @@ use App\Http\Controllers\Section5Controller;
 |
 */
 
-Route::get('/', function () {
-    $section1 = Section1::all();
-    $section2 = Section2::all();
-    $section3 = Section3::all();
-    $section4 = Section4::all();
-    $section5 = Section5::all();
-    return view('welcome',['section1' => $section1 , 'section2' => $section2 , 'section3' => $section3 , 'section4' => $section4 , 'section5' => $section5]);
-})->name('home');
+Route::get('/', [ViewsController::class,'index'])->name('home');
+Route::get('/print', [PrintController::class,'printPage'])->name('print');
 
 Route::get('/admin', function () {
-    return view('admin');
+    $views = Views::all();
+    $form = Form::all();
+
+    return view('admin', [
+        'views' => $views,
+        'form' => $form,
+    ]);
 })->name('admin');
+
+Route::get('/section-edit', function () {
+    return view('section-edit');
+})->name('section-edit');
 
 Route::get('/casestudy', function () {
     $section3 = Section3::all();
